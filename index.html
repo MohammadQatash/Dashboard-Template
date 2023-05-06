@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Template</title>
+    <!-- Css File -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Font -->
+    <link href="https://fonts.cdnfonts.com/css/frutiger-lt-pro" rel="stylesheet">
+    <!-- JavaScript file -->
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="fluid-container">
+            <div class="header d-flex justify-space-between align-items-center my-20 mx-30">
+                <a class="left-header d-flex gap cursor" style="--gap-size:20px" href="#">
+                    <div class="logo">
+                        <span class="d-inline-block relative"></span>
+                        <span class="d-inline-block relative"></span>
+                    </div>
+                    <div class="company-name bold">Logo</div>
+                </a>
+                <div class="right-header d-flex justify-content-end gap" style="--gap-size:10px">
+                    <!-- Search Input -->
+                    <form class="search-form-input d-flex align-items-center justify-space-between pa-20">
+                        <input
+                            type="search"
+                            placeholder="Search" 
+                            class="search-input"
+                        />
+                        <svg class="svg-icon cursor" style="--icon-size:29px" viewBox="0 0 20 20">
+                            <path fill="none" d="M18.109,17.776l-3.082-3.081c-0.059-0.059-0.135-0.077-0.211-0.087c1.373-1.38,2.221-3.28,2.221-5.379c0-4.212-3.414-7.626-7.625-7.626c-4.212,0-7.626,3.414-7.626,7.626s3.414,7.627,7.626,7.627c1.918,0,3.665-0.713,5.004-1.882c0.006,0.085,0.033,0.17,0.098,0.234l3.082,3.081c0.143,0.142,0.371,0.142,0.514,0C18.25,18.148,18.25,17.918,18.109,17.776zM9.412,16.13c-3.811,0-6.9-3.089-6.9-6.9c0-3.81,3.089-6.899,6.9-6.899c3.811,0,6.901,3.09,6.901,6.899C16.312,13.041,13.223,16.13,9.412,16.13z"></path>
+                        </svg>
+                    </form>
+                    <!-- Language dropdown -->
+                    <div class="dropdown cursor relative" onclick="toggleLang('language')">
+                        <div class="btn-navbar d-flex align-items-center justify-content-center">
+                            <svg class="svg-icon" style="--icon-size:29px" viewBox="0 0 20 20">
+                                <path fill="none" d="M10,2.531c-4.125,0-7.469,3.344-7.469,7.469c0,4.125,3.344,7.469,7.469,7.469c4.125,0,7.469-3.344,7.469-7.469C17.469,5.875,14.125,2.531,10,2.531 M10,3.776c1.48,0,2.84,0.519,3.908,1.384c-1.009,0.811-2.111,1.512-3.298,2.066C9.914,6.072,9.077,5.017,8.14,4.059C8.728,3.876,9.352,3.776,10,3.776 M6.903,4.606c0.962,0.93,1.82,1.969,2.53,3.112C7.707,8.364,5.849,8.734,3.902,8.75C4.264,6.976,5.382,5.481,6.903,4.606 M3.776,10c2.219,0,4.338-0.418,6.29-1.175c0.209,0.404,0.405,0.813,0.579,1.236c-2.147,0.805-3.953,2.294-5.177,4.195C4.421,13.143,3.776,11.648,3.776,10 M10,16.224c-1.337,0-2.572-0.426-3.586-1.143c1.079-1.748,2.709-3.119,4.659-3.853c0.483,1.488,0.755,3.071,0.784,4.714C11.271,16.125,10.646,16.224,10,16.224 M13.075,15.407c-0.072-1.577-0.342-3.103-0.806-4.542c0.673-0.154,1.369-0.243,2.087-0.243c0.621,0,1.22,0.085,1.807,0.203C15.902,12.791,14.728,14.465,13.075,15.407 M14.356,9.378c-0.868,0-1.708,0.116-2.515,0.313c-0.188-0.464-0.396-0.917-0.621-1.359c1.294-0.612,2.492-1.387,3.587-2.284c0.798,0.97,1.302,2.187,1.395,3.517C15.602,9.455,14.99,9.378,14.356,9.378"></path>
+                            </svg>
+                        </div>
+                        <ul id="languageDropdownList" class="dropdown-list">
+                            <li class="d-flex align-items-center pa-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="30" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="id1"><path d="M 2.511719 6.402344 L 27.191406 6.402344 L 27.191406 24.546875 L 2.511719 24.546875 Z M 2.511719 6.402344 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#id1)"><path fill="rgb(0%, 14.118958%, 49.01886%)" d="M 2.519531 9.234375 L 2.519531 11.984375 L 6.375 11.984375 Z M 5.714844 24.546875 L 11.425781 24.546875 L 11.425781 20.472656 Z M 18.277344 20.472656 L 18.277344 24.546875 L 23.984375 24.546875 Z M 2.519531 18.964844 L 2.519531 21.714844 L 6.378906 18.964844 Z M 23.988281 6.402344 L 18.277344 6.402344 L 18.277344 10.472656 Z M 27.183594 21.714844 L 27.183594 18.964844 L 23.324219 18.964844 Z M 27.183594 11.984375 L 27.183594 9.234375 L 23.324219 11.984375 Z M 11.425781 6.402344 L 5.714844 6.402344 L 11.425781 10.472656 Z M 11.425781 6.402344 " fill-opacity="1" fill-rule="nonzero"/><path fill="rgb(81.17981%, 10.5896%, 16.859436%)" d="M 19.742188 18.964844 L 26.394531 23.710938 C 26.71875 23.375 26.949219 22.953125 27.074219 22.488281 L 22.132812 18.964844 Z M 11.425781 18.964844 L 9.960938 18.964844 L 3.304688 23.707031 C 3.664062 24.078125 4.121094 24.34375 4.632812 24.464844 L 11.425781 19.621094 Z M 18.277344 11.984375 L 19.742188 11.984375 L 26.394531 7.238281 C 26.039062 6.867188 25.582031 6.605469 25.070312 6.480469 L 18.277344 11.324219 Z M 9.960938 11.984375 L 3.304688 7.238281 C 2.984375 7.574219 2.753906 7.992188 2.628906 8.460938 L 7.570312 11.984375 Z M 9.960938 11.984375 " fill-opacity="1" fill-rule="nonzero"/><path fill="rgb(93.328857%, 93.328857%, 93.328857%)" d="M 27.183594 17.566406 L 16.90625 17.566406 L 16.90625 24.546875 L 18.277344 24.546875 L 18.277344 20.472656 L 23.984375 24.546875 L 24.441406 24.546875 C 25.207031 24.546875 25.898438 24.222656 26.394531 23.710938 L 19.742188 18.964844 L 22.132812 18.964844 L 27.074219 22.488281 C 27.136719 22.253906 27.183594 22.011719 27.183594 21.753906 L 27.183594 21.714844 L 23.324219 18.964844 L 27.183594 18.964844 Z M 2.519531 17.566406 L 2.519531 18.964844 L 6.378906 18.964844 L 2.519531 21.714844 L 2.519531 21.753906 C 2.519531 22.515625 2.820312 23.203125 3.304688 23.707031 L 9.960938 18.964844 L 11.425781 18.964844 L 11.425781 19.621094 L 4.632812 24.464844 C 4.835938 24.515625 5.042969 24.546875 5.261719 24.546875 L 5.714844 24.546875 L 11.425781 20.472656 L 11.425781 24.546875 L 12.796875 24.546875 L 12.796875 17.566406 Z M 27.183594 9.191406 C 27.183594 8.429688 26.882812 7.742188 26.394531 7.238281 L 19.742188 11.984375 L 18.277344 11.984375 L 18.277344 11.324219 L 25.070312 6.480469 C 24.867188 6.433594 24.660156 6.402344 24.441406 6.402344 L 23.988281 6.402344 L 18.277344 10.472656 L 18.277344 6.402344 L 16.90625 6.402344 L 16.90625 13.378906 L 27.183594 13.378906 L 27.183594 11.984375 L 23.324219 11.984375 L 27.183594 9.234375 Z M 11.425781 6.402344 L 11.425781 10.472656 L 5.714844 6.402344 L 5.261719 6.402344 C 4.496094 6.402344 3.804688 6.722656 3.304688 7.238281 L 9.960938 11.984375 L 7.570312 11.984375 L 2.628906 8.460938 C 2.566406 8.695312 2.519531 8.9375 2.519531 9.191406 L 2.519531 9.234375 L 6.375 11.984375 L 2.519531 11.984375 L 2.519531 13.378906 L 12.796875 13.378906 L 12.796875 6.402344 Z M 11.425781 6.402344 " fill-opacity="1" fill-rule="nonzero"/><path fill="rgb(81.17981%, 10.5896%, 16.859436%)" d="M 16.90625 13.378906 L 16.90625 6.402344 L 12.796875 6.402344 L 12.796875 13.378906 L 2.519531 13.378906 L 2.519531 17.566406 L 12.796875 17.566406 L 12.796875 24.546875 L 16.90625 24.546875 L 16.90625 17.566406 L 27.183594 17.566406 L 27.183594 13.378906 Z M 16.90625 13.378906 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+                                <a href="#">English</a>
+                            </li>
+                            <li class="d-flex align-items-center pa-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" viewBox="0 0 12 6"><path fill="#00732f" d="M0 0h12v2H0z"></path><path fill="#fff" d="M0 2h12v2H0z"></path><path d="M0 4h12v2H0z"></path><path fill="red" d="M0 0h3v6H0z"></path></svg>
+                                <a href="#">عربي</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Notification dropdown -->
+                    <div class="dropdown cursor relative" onclick="toggleLang('notification')">
+                        <div class="btn-navbar bell-svg relative d-flex align-items-center justify-content-center">
+                            <svg class="svg-icon" style="--icon-size:25px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                            </svg>
+                        </div>
+                        <ul id="notificationDropdownList" class="notification-dropdown">
+                            <li class="d-flex align-items-center pa-15 gap">
+                                <div class="btn-bell-dropdown bell-plus relative d-flex align-items-center justify-content-center">
+                                    <svg class="svg-icon" style="--icon-size:30px;--icon-color:#f8e9cb;" xmlns="http://www.w3.org/2000/svg" fill="#FFAF00" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                    </svg>
+                                    <svg class="plus-svg" id="Group_85612" data-name="Group 85612" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                        <path id="Path_277223" data-name="Path 277223" d="M25.262,24.1a1.25,1.25,0,0,1-1.25-1.25V10.35a1.25,1.25,0,1,1,2.5,0v12.5A1.25,1.25,0,0,1,25.262,24.1Z" transform="translate(-17.762 -9.1)" fill="red"/>
+                                        <path id="Path_277224" data-name="Path 277224" d="M1.25,15A1.25,1.25,0,0,1,0,13.75V1.25a1.25,1.25,0,0,1,2.5,0v12.5A1.25,1.25,0,0,1,1.25,15Z" transform="translate(15 6.25) rotate(90)" fill="red"/>
+                                    </svg>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="d-flex justify-space-between">
+                                        <div class="notification-head bold mb-10">GIS Data Request</div>
+                                        <span class="time d-inline-block">12:08 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-space-between gap" style="--gap-size:30px">
+                                        <p class="notification-txt">Ahmad Khalil is Waiting for approval to Add New GIS Data</p>
+                                        <a class="show-link" href="#">Show</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center pa-15 gap">
+                                <div class="btn-bell-dropdown bell-plus relative d-flex align-items-center justify-content-center">
+                                    <svg class="svg-icon" style="--icon-size:30px;--icon-color:#f8e9cb;" xmlns="http://www.w3.org/2000/svg" fill="#FFAF00" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                    </svg>
+                                    <svg class="plus-svg" id="Group_85612" data-name="Group 85612" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                        <path id="Path_277223" data-name="Path 277223" d="M25.262,24.1a1.25,1.25,0,0,1-1.25-1.25V10.35a1.25,1.25,0,1,1,2.5,0v12.5A1.25,1.25,0,0,1,25.262,24.1Z" transform="translate(-17.762 -9.1)" fill="red"/>
+                                        <path id="Path_277224" data-name="Path 277224" d="M1.25,15A1.25,1.25,0,0,1,0,13.75V1.25a1.25,1.25,0,0,1,2.5,0v12.5A1.25,1.25,0,0,1,1.25,15Z" transform="translate(15 6.25) rotate(90)" fill="red"/>
+                                    </svg>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="d-flex justify-space-between">
+                                        <div class="notification-head bold mb-10">GIS Data Request</div>
+                                        <span class="time d-inline-block">12:08 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-space-between gap" style="--gap-size:30px">
+                                        <p class="notification-txt">Ahmad Khalil is Waiting for approval to Add New GIS Data</p>
+                                        <a class="show-link" href="#">Show</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center pa-15 gap">
+                                <div class="btn-bell-dropdown bell-plus relative d-flex align-items-center justify-content-center">
+                                    <svg class="svg-icon" style="--icon-size:30px;--icon-color:#f8e9cb;" xmlns="http://www.w3.org/2000/svg" fill="#FFAF00" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                    </svg>
+                                    <svg class="plus-svg" id="Group_85612" data-name="Group 85612" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                        <path id="Path_277223" data-name="Path 277223" d="M25.262,24.1a1.25,1.25,0,0,1-1.25-1.25V10.35a1.25,1.25,0,1,1,2.5,0v12.5A1.25,1.25,0,0,1,25.262,24.1Z" transform="translate(-17.762 -9.1)" fill="red"/>
+                                        <path id="Path_277224" data-name="Path 277224" d="M1.25,15A1.25,1.25,0,0,1,0,13.75V1.25a1.25,1.25,0,0,1,2.5,0v12.5A1.25,1.25,0,0,1,1.25,15Z" transform="translate(15 6.25) rotate(90)" fill="red"/>
+                                    </svg>
+                                </div>
+                                <div class="notification-content">
+                                    <div class="d-flex justify-space-between">
+                                        <div class="notification-head bold mb-10">GIS Data Request</div>
+                                        <span class="time d-inline-block">12:08 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-space-between gap" style="--gap-size:30px">
+                                        <p class="notification-txt">Ahmad Khalil is Waiting for approval to Add New GIS Data</p>
+                                        <a class="show-link" href="#">Show</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="see-all text-center fs-15 my-15">
+                                <a href="#">See All</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- Profile dropdown -->
+                    <div class="dropdown cursor relative" onclick="toggleLang('profile')">
+                        <div id="profile" class="profile test d-flex align-items-center gap h-100 relative" style="--gap-size:20px">
+                            <img src="./images/profile-image.jpg" alt="profile image" class="profile-img">
+                            <div class="profile-content">
+                                <div class="username">John Doe</div>
+                                <div class="admin">Admin</div>
+                            </div>
+                        </div>
+                        <ul id="profileDropdownList" class="profile-dropdown">
+                            <li class="d-flex align-items-center py-5 px-15 gap relative">
+                                <svg class="svg-icon" viewBox="0 0 20 20" style="--icon-size:20px;--icon-color:#687599">
+                                    <path fill="none" d="M10,10.9c2.373,0,4.303-1.932,4.303-4.306c0-2.372-1.93-4.302-4.303-4.302S5.696,4.223,5.696,6.594C5.696,8.969,7.627,10.9,10,10.9z M10,3.331c1.801,0,3.266,1.463,3.266,3.263c0,1.802-1.465,3.267-3.266,3.267c-1.8,0-3.265-1.465-3.265-3.267C6.735,4.794,8.2,3.331,10,3.331z"></path>
+                                    <path fill="none" d="M10,12.503c-4.418,0-7.878,2.058-7.878,4.685c0,0.288,0.231,0.52,0.52,0.52c0.287,0,0.519-0.231,0.519-0.52c0-1.976,3.132-3.646,6.84-3.646c3.707,0,6.838,1.671,6.838,3.646c0,0.288,0.234,0.52,0.521,0.52s0.52-0.231,0.52-0.52C17.879,14.561,14.418,12.503,10,12.503z"></path>
+                                </svg>
+                                <div>My Account</div>
+                            </li>
+                            <li class="d-flex align-items-center py-5 px-15 gap">
+                                <svg class="svg-icon" viewBox="0 0 20 20" style="--icon-size:20px;--icon-color:#687599">
+                                    <path fill="none" d="M10.032,8.367c-1.112,0-2.016,0.905-2.016,2.018c0,1.111,0.904,2.014,2.016,2.014c1.111,0,2.014-0.902,2.014-2.014C12.046,9.271,11.143,8.367,10.032,8.367z M10.032,11.336c-0.525,0-0.953-0.427-0.953-0.951c0-0.526,0.427-0.955,0.953-0.955c0.524,0,0.951,0.429,0.951,0.955C10.982,10.909,10.556,11.336,10.032,11.336z"></path>
+                                    <path fill="none" d="M17.279,8.257h-0.785c-0.107-0.322-0.237-0.635-0.391-0.938l0.555-0.556c0.208-0.208,0.208-0.544,0-0.751l-2.254-2.257c-0.199-0.2-0.552-0.2-0.752,0l-0.556,0.557c-0.304-0.153-0.617-0.284-0.939-0.392V3.135c0-0.294-0.236-0.532-0.531-0.532H8.435c-0.293,0-0.531,0.237-0.531,0.532v0.784C7.582,4.027,7.269,4.158,6.966,4.311L6.409,3.754c-0.1-0.1-0.234-0.155-0.376-0.155c-0.141,0-0.275,0.055-0.375,0.155L3.403,6.011c-0.208,0.207-0.208,0.543,0,0.751l0.556,0.556C3.804,7.622,3.673,7.935,3.567,8.257H2.782c-0.294,0-0.531,0.238-0.531,0.531v3.19c0,0.295,0.237,0.531,0.531,0.531h0.787c0.105,0.318,0.236,0.631,0.391,0.938l-0.556,0.559c-0.208,0.207-0.208,0.545,0,0.752l2.254,2.254c0.208,0.207,0.544,0.207,0.751,0l0.558-0.559c0.303,0.154,0.616,0.285,0.938,0.391v0.787c0,0.293,0.238,0.531,0.531,0.531h3.191c0.295,0,0.531-0.238,0.531-0.531v-0.787c0.322-0.105,0.636-0.236,0.938-0.391l0.56,0.559c0.208,0.205,0.546,0.207,0.752,0l2.252-2.254c0.208-0.207,0.208-0.545,0.002-0.752l-0.559-0.559c0.153-0.303,0.285-0.615,0.389-0.938h0.789c0.295,0,0.532-0.236,0.532-0.531v-3.19C17.812,8.495,17.574,8.257,17.279,8.257z M16.747,11.447h-0.653c-0.241,0-0.453,0.164-0.514,0.398c-0.129,0.496-0.329,0.977-0.594,1.426c-0.121,0.209-0.089,0.473,0.083,0.645l0.463,0.465l-1.502,1.504l-0.465-0.463c-0.174-0.174-0.438-0.207-0.646-0.082c-0.447,0.262-0.927,0.463-1.427,0.594c-0.234,0.061-0.397,0.271-0.397,0.514V17.1H8.967v-0.652c0-0.242-0.164-0.453-0.397-0.514c-0.5-0.131-0.98-0.332-1.428-0.594c-0.207-0.123-0.472-0.09-0.646,0.082l-0.463,0.463L4.53,14.381l0.461-0.463c0.169-0.172,0.204-0.434,0.083-0.643c-0.266-0.461-0.467-0.939-0.596-1.43c-0.06-0.234-0.272-0.398-0.514-0.398H3.313V9.319h0.652c0.241,0,0.454-0.162,0.514-0.397c0.131-0.498,0.33-0.979,0.595-1.43c0.122-0.208,0.088-0.473-0.083-0.645L4.53,6.386l1.503-1.504l0.46,0.462c0.173,0.172,0.437,0.204,0.646,0.083c0.45-0.265,0.931-0.464,1.433-0.597c0.233-0.062,0.396-0.274,0.396-0.514V3.667h2.128v0.649c0,0.24,0.161,0.452,0.396,0.514c0.502,0.133,0.982,0.333,1.433,0.597c0.211,0.12,0.475,0.089,0.646-0.083l0.459-0.462l1.504,1.504l-0.463,0.463c-0.17,0.171-0.202,0.438-0.081,0.646c0.263,0.448,0.463,0.928,0.594,1.427c0.061,0.235,0.272,0.397,0.514,0.397h0.651V11.447z"></path>
+                                </svg>
+                                <div>Settings</div>
+                            </li>
+                            <li class="d-flex align-items-center py-5 px-15 gap">
+                                <svg class="svg-icon" viewBox="0 0 20 20" style="--icon-size:20px;--icon-color:#687599">
+                                    <path fill="none" d="M13.53,2.238c-0.389-0.164-0.844,0.017-1.01,0.41c-0.166,0.391,0.018,0.845,0.411,1.01
+                                        c2.792,1.181,4.598,3.904,4.6,6.937c0,4.152-3.378,7.529-7.53,7.529c-4.151,0-7.529-3.377-7.529-7.529
+                                        C2.469,7.591,4.251,4.878,7.01,3.683C7.401,3.515,7.58,3.06,7.412,2.67c-0.17-0.392-0.624-0.571-1.014-0.402
+                                        c-3.325,1.44-5.472,4.708-5.47,8.327c0,5.002,4.069,9.071,9.071,9.071c5.003,0,9.073-4.07,9.073-9.071
+                                        C19.07,6.939,16.895,3.659,13.53,2.238z"></path>
+                                    <path fill="none" d="M9.999,7.616c0.426,0,0.771-0.345,0.771-0.771v-5.74c0-0.426-0.345-0.771-0.771-0.771
+                                        c-0.427,0-0.771,0.345-0.771,0.771v5.74C9.228,7.271,9.573,7.616,9.999,7.616z"></path>
+                                </svg>
+                                <div>Logout</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="d-flex">
+        <!-- Side Navigation -->
+        <aside>
+            <div class="sidenav d-flex flex-column">
+                <div class="sidenav-list">
+                    <a href="#" class="nav-tab active-nav relative d-flex align-items-center gap pa-20" style="--gap-size:20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.889" height="19.891" viewBox="0 0 19.889 19.891">
+                            <path id="home_1_" data-name="home (1)" d="M19.355,8.651h0L11.239.536a1.831,1.831,0,0,0-2.59,0L.54,8.645l-.008.008a1.83,1.83,0,0,0,1.219,3.12l.056,0H2.13v5.971a2.146,2.146,0,0,0,2.143,2.143H7.448a.583.583,0,0,0,.583-.583V14.626a.979.979,0,0,1,.978-.978h1.872a.979.979,0,0,1,.978.978v4.681a.583.583,0,0,0,.583.583h3.174a2.146,2.146,0,0,0,2.143-2.143V11.776h.3a1.831,1.831,0,0,0,1.3-3.125Zm0,0" transform="translate(0 0.001)" fill="#1785c6"/>
+                        </svg>
+                        <span class="fs-20">Home</span>
+                    </a>
+                    <a href="#" class="nav-tab relative d-flex align-items-center gap pa-20" style="--gap-size:20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17.689" height="19.082" viewBox="0 0 17.689 19.082">
+                            <g id="transaction" transform="translate(-1.631 -0.5)">
+                                <path id="Path_253492" data-name="Path 253492" d="M1.643,5.871a1.157,1.157,0,0,0,1.173,1.19H15.267L13.139,9.19a1.2,1.2,0,0,0,.8,2.043,1.21,1.21,0,0,0,.882-.35l4.179-4.179a1.244,1.244,0,0,0,.239-1.319,2.1,2.1,0,0,0-.246-.36L14.813.851a1.159,1.159,0,0,0-1.674.013,1.159,1.159,0,0,0-.008,1.676l2.137,2.137H2.817A1.159,1.159,0,0,0,1.643,5.871Z" transform="translate(-0.005 0)" fill="#6d7485"/>
+                                <path id="Path_253493" data-name="Path 253493" d="M19.319,19.422a1.157,1.157,0,0,0-1.173-1.191H5.695l2.139-2.14a1.192,1.192,0,0,0-1.689-1.683L1.967,18.588a1.209,1.209,0,0,0-.221,1.348,1.9,1.9,0,0,0,.228.33l4.175,4.175a1.167,1.167,0,0,0,.821.351,1.221,1.221,0,0,0,.854-.364,1.16,1.16,0,0,0,.008-1.676L5.695,20.616h12.45a1.159,1.159,0,0,0,1.174-1.193Z" transform="translate(0 -5.211)" fill="#6d7485"/>
+                            </g>
+                        </svg>
+                        <span class="fs-20">Operation</span>
+                    </a>
+                    <a href="#" class="nav-tab relative d-flex align-items-center gap pa-20" style="--gap-size:20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21.074" height="21.074" viewBox="0 0 21.074 21.074">
+                            <g id="map" transform="translate(0 -0.5)">
+                                <path id="Path_253494" data-name="Path 253494" d="M32.143,272.066H31.2a.621.621,0,0,0-.57.375l-2.616,6.092,6.213-3.173a29.3,29.3,0,0,1-2.082-3.293Zm0,0" transform="translate(-26.859 -260.388)" fill="#6d7485"/>
+                                <path id="Path_253495" data-name="Path 253495" d="M180.326,272.442a.62.62,0,0,0-.57-.375h-.945a33.151,33.151,0,0,1-3.85,5.547,1.863,1.863,0,0,1-2.806,0c-.076-.087-.471-.545-1.016-1.249l-1.12.572,4.237,4.229L182.286,277Zm0,0" transform="translate(-163.022 -260.389)" fill="#6d7485"/>
+                                <path id="Path_253496" data-name="Path 253496" d="M.389,407.589l-.338.787a.619.619,0,0,0,.57.862h9.1a2.5,2.5,0,0,1,.363-.2L5.838,404.8Zm0,0" transform="translate(0 -387.664)" fill="#6d7485"/>
+                                <path id="Path_253497" data-name="Path 253497" d="M309.623,422.691l-1.27-2.956-7.365,3.818h8.065a.619.619,0,0,0,.57-.862Zm0,0" transform="translate(-288.599 -401.979)" fill="#6d7485"/>
+                                <path id="Path_253498" data-name="Path 253498" d="M242.181,121.415a.62.62,0,1,0-.62.619A.62.62,0,0,0,242.181,121.415Zm0,0" transform="translate(-231.024 -115.345)" fill="#6d7485"/>
+                                <path id="Path_253499" data-name="Path 253499" d="M126.522,16.372c.209-.24,5.11-5.91,5.11-9.807,0-8.037-11.156-8.135-11.156,0,0,3.9,4.9,9.568,5.11,9.807A.621.621,0,0,0,126.522,16.372Zm-2.327-10.3a1.859,1.859,0,1,1,1.859,1.855A1.86,1.86,0,0,1,124.195,6.07Zm0,0" transform="translate(-115.517 0)" fill="#6d7485"/>
+                            </g>
+                        </svg>
+                        <span class="fs-20">Map</span>
+                    </a>
+                    <a href="#" class="nav-tab relative d-flex align-items-center gap pa-20" style="--gap-size:20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21.578" height="20.38" viewBox="0 0 21.578 20.38">
+                            <g id="Group_87612" data-name="Group 87612" transform="translate(-55 -445.035)">
+                                <path id="Path_253500" data-name="Path 253500" d="M.6,234.668H3a.6.6,0,0,1,.6.6v5.994a.6.6,0,0,1-.6.6H.6a.6.6,0,0,1-.6-.6v-5.994a.6.6,0,0,1,.6-.6Zm0,0" transform="translate(55 223.554)" fill="#6d7485"/>
+                                <path id="Path_253501" data-name="Path 253501" d="M107.267,149.332h2.4a.6.6,0,0,1,.6.6v10.789a.6.6,0,0,1-.6.6h-2.4a.6.6,0,0,1-.6-.6V149.931A.6.6,0,0,1,107.267,149.332Zm0,0" transform="translate(-45.674 304.095)" fill="#6d7485"/>
+                                <path id="Path_253502" data-name="Path 253502" d="M213.931,192h2.4a.6.6,0,0,1,.6.6v8.391a.6.6,0,0,1-.6.6h-2.4a.6.6,0,0,1-.6-.6V192.6A.6.6,0,0,1,213.931,192Zm0,0" transform="translate(-146.344 263.824)" fill="#6d7485"/>
+                                <path id="Path_253503" data-name="Path 253503" d="M320.6,128H323a.6.6,0,0,1,.6.6v11.988a.6.6,0,0,1-.6.6h-2.4a.6.6,0,0,1-.6-.6V128.6A.6.6,0,0,1,320.6,128Zm0,0" transform="translate(-247.018 324.228)" fill="#6d7485"/>
+                                <path id="Path_253504" data-name="Path 253504" d="M19.78,0a1.8,1.8,0,0,0-1.8,1.8,1.778,1.778,0,0,0,.1.574l-3,1.784a1.783,1.783,0,0,0-2.87.384L9.567,3.23A1.8,1.8,0,0,0,9.59,3a1.8,1.8,0,1,0-3.459.686L2.7,6.244a1.777,1.777,0,0,0-.9-.25A1.817,1.817,0,1,0,3.476,7.16L6.943,4.572A1.76,1.76,0,0,0,9.025,4.3l3.01,1.491a1.8,1.8,0,0,0,3.549-.4c0-.046-.01-.089-.013-.133l3.264-1.94a1.78,1.78,0,0,0,.946.275,1.8,1.8,0,1,0,0-3.6Zm0,0" transform="translate(55 445.035)" fill="#6d7485"/>
+                            </g>
+                        </svg>
+                        <span class="fs-20">Reports</span>
+                    </a>
+                    <a href="#" class="nav-tab relative d-flex align-items-center gap pa-20" style="--gap-size:20px">
+                        <svg id="Group_85063" data-name="Group 85063" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.252" height="17.255" viewBox="0 0 17.252 17.255">
+                            <defs>
+                                <clipPath id="clip-path">
+                                    <rect id="Rectangle_34519" data-name="Rectangle 34519" width="17.252" height="17.255" transform="translate(0 0)" fill="none"/>
+                                </clipPath>
+                            </defs>
+                            <g id="Group_85063-2" data-name="Group 85063" clip-path="url(#clip-path)">
+                                <path id="Path_276829" data-name="Path 276829" d="M4.946,4.377a.654.654,0,1,0-.654-.654.656.656,0,0,0,.654.654" fill="#6d7485"/>
+                                <path id="Path_276830" data-name="Path 276830" d="M12.308,7.976a.654.654,0,1,0,.654.654.654.654,0,0,0-.654-.654" fill="#6d7485"/>
+                                <path id="Path_276831" data-name="Path 276831" d="M14.9,0H2.352A2.353,2.353,0,0,0,0,2.355V14.9a2.353,2.353,0,0,0,2.352,2.352H14.9a2.354,2.354,0,0,0,2.348-2.348V2.355A2.354,2.354,0,0,0,14.9,0M1.879,3.15H3.241a1.8,1.8,0,0,1,3.411,0h8.723a.353.353,0,0,1,.046,0A.573.573,0,0,1,15.373,4.3H6.65a1.8,1.8,0,0,1-3.411,0H1.831A.573.573,0,1,1,1.879,3.15M15.374,14.11H9.1a1.8,1.8,0,0,1-3.411,0H1.879a.573.573,0,0,1,0-1.145H5.694a1.8,1.8,0,0,1,3.411,0h6.27a.368.368,0,0,1,.047,0,.573.573,0,1,1-.048,1.145m0-4.908H14.013a1.8,1.8,0,0,1-3.411,0H1.879a.384.384,0,0,1-.048,0,.573.573,0,0,1,.048-1.145H10.6a1.8,1.8,0,0,1,3.411,0h1.362a.384.384,0,0,1,.048,0A.573.573,0,0,1,15.375,9.2" fill="#6d7485"/>
+                                <path id="Path_276832" data-name="Path 276832" d="M7.4,12.884a.654.654,0,1,0,.654.654.654.654,0,0,0-.654-.654" fill="#6d7485"/>
+                            </g>
+                        </svg>
+                        <span class="fs-20">Control Panel</span>
+                    </a>
+                </div>
+                <div class="need-help align-center relative text-center d-flex flex-column justify-content-center align-items-center gap">
+                    <img class="need-help-img" src="./images/Group 84983@2x.png">
+                    <div class="fs-20" style="color: #ffff;">Need Help?</div>
+                    <p class="need-help-p">Click here to find<br> Functionalities, Help, and More!</p>
+                    <button class="need-help-btn cursor">Discover</button>
+                </div>
+            </div>
+        </aside>
+        <!-- Home Section -->
+        <section class="home-section w-100 pa-30 d-flex flex-column">
+            <div class="home-section-head mb-30">Welcome! John Doe</div>
+            <section class="home-section-content d-flex gap">
+                <!-- Left Box VPark Fleet -->
+                <div class="vpark-fleet br-20 d-flex flex-column w-50 pa-20 gap" style="--gap-size:30px">
+                    <div class="vpark-fleet-head d-flex justify-space-between align-items-center">
+                        <h5>VPark Fleet</h5>
+                        <div class="d-flex gap" style="--gap-size:5px">
+                            <div class="vpark-fleet-icon d-flex align-items-center justify-content-center cursor">
+                                <img src="./images/Group 79025.png" alt="image">
+                            </div>
+                            <div class="vpark-fleet-icon d-flex align-items-center justify-content-center cursor">
+                                <img src="./images/Group 79024.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion 1 -->
+                    <div class="accordion rotate d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head wrong relative">Smart Vehicle 1</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel active-panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                    <!-- Accordion 2 -->
+                    <div class="accordion d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head relative">Smart Vehicle 2</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                    <!-- Accordion 3 -->
+                    <div class="accordion d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head relative">Smart Vehicle 3</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                    <!-- Accordion 4 -->
+                    <div class="accordion d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head wrong relative">Smart Vehicle 4</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                    <!-- Accordion 5 -->
+                    <div class="accordion d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head danger relative">Smart Vehicle 5</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                    <!-- Accordion 6 -->
+                    <div class="accordion d-flex align-items-center cursor pa-15 relative">
+                        <div class="accordion-head relative">Smart Vehicle 6</div>
+                        <img class="accordion-img" src="./images/Group 62101.png" alt="car-image">
+                    </div>
+                    <div class="panel d-flex align-items-center justify-space-around">
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="29.268" height="25.556" viewBox="0 0 29.268 25.556">
+                                <g id="Group_85042" data-name="Group 85042" transform="translate(-494 -458.503)">
+                                    <path id="Path_273621" data-name="Path 273621" d="M21.776,3.064h2.2a5.3,5.3,0,0,1,5.292,5.292V20.265a5.3,5.3,0,0,1-5.292,5.292H5.3a5.3,5.3,0,0,1-5.3-5.3V8.355A5.3,5.3,0,0,1,5.292,3.064h2.2A4.148,4.148,0,0,1,8.606,1.312,4.588,4.588,0,0,1,11.528,0H17.74a4.591,4.591,0,0,1,2.919,1.317,4.151,4.151,0,0,1,1.115,1.751Zm-7.141,4.8a6.45,6.45,0,1,1-4.561,1.889,6.45,6.45,0,0,1,4.561-1.889m3.153,3.291A4.465,4.465,0,1,0,19.095,14.3a4.466,4.466,0,0,0-1.308-3.153Zm6.188-6.1H20.934a.993.993,0,0,1-.992-.992,1.885,1.885,0,0,0-.653-1.311,2.519,2.519,0,0,0-1.548-.759H11.528a2.519,2.519,0,0,0-1.548.759,1.886,1.886,0,0,0-.653,1.312.993.993,0,0,1-.992.992H5.292A3.317,3.317,0,0,0,1.985,8.355V20.265a3.319,3.319,0,0,0,3.307,3.307H23.973a3.317,3.317,0,0,0,3.307-3.307V8.355a3.319,3.319,0,0,0-3.307-3.307Z" transform="translate(494 458.503)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Camera</div>
+                            <div class="panel-description">Online</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.683" height="26.918" viewBox="0 0 32.683 26.918">
+                                <g id="Group_85041" data-name="Group 85041" transform="translate(-640.665 -456.168)">
+                                    <path id="Path_273617" data-name="Path 273617" d="M147.52,18.564a1.164,1.164,0,0,1-.825-.342,20.29,20.29,0,0,0-28.7,0,1.167,1.167,0,1,1-1.651-1.651,22.477,22.477,0,0,1,16-6.627h0a22.478,22.478,0,0,1,16,6.628,1.168,1.168,0,0,1-.826,1.993" transform="translate(524.66 446.226)" fill="#0c1834"/>
+                                    <path id="Path_273618" data-name="Path 273618" d="M141.684,22.286a1.164,1.164,0,0,1-.826-.342,13.6,13.6,0,0,0-9.681-4.012h0a13.6,13.6,0,0,0-9.681,4.01c-.022.022-.046.043-.069.063a1.167,1.167,0,0,1-1.586-1.712l.023-.022A15.921,15.921,0,0,1,131.176,15.6h0a15.922,15.922,0,0,1,11.332,4.7,1.168,1.168,0,0,1-.825,1.993" transform="translate(525.246 447.173)" fill="#0c1834"/>
+                                    <path id="Path_273619" data-name="Path 273619" d="M125.052,26.006a1.168,1.168,0,0,1-.8-2.023,9.364,9.364,0,0,1,6.633-2.73h0a9.355,9.355,0,0,1,6.661,2.76,1.167,1.167,0,1,1-1.651,1.651,7.036,7.036,0,0,0-5.01-2.076h0a7.043,7.043,0,0,0-5.01,2.075,1.167,1.167,0,0,1-.827.343" transform="translate(525.98 448.121)" fill="#0c1834"/>
+                                    <path id="Path_273620" data-name="Path 273620" d="M130.238,34.066a3.725,3.725,0,1,1,3.725-3.725,3.728,3.728,0,0,1-3.725,3.725m0-5.114a1.389,1.389,0,1,0,1.389,1.389,1.39,1.39,0,0,0-1.389-1.389" transform="translate(526.421 449.02)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Network</div>
+                            <div class="panel-description">Available</div>
+                            <div class="panel-status relative">Active</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32.01" height="24.237" viewBox="0 0 32.01 24.237">
+                                <g id="Group_85043" data-name="Group 85043" transform="translate(-787.782 -459.67)">
+                                    <path id="Path_273613" data-name="Path 273613" d="M262.307,36.46a3.122,3.122,0,0,1-3.057-3.026V28.225a3.119,3.119,0,0,1,3.029-3.056H288.2a3.117,3.117,0,0,1,3.057,3.025V33.4a3.118,3.118,0,0,1-3.026,3.054Zm.018-9.055a.871.871,0,0,0-.838.85V33.4a.868.868,0,0,0,.851.82H288.2a.87.87,0,0,0,.821-.851V28.225a.868.868,0,0,0-.85-.82Z" transform="translate(528.532 447.447)" fill="#0c1834"/>
+                                    <path id="Path_273614" data-name="Path 273614" d="M277.6,31.093a1.863,1.863,0,1,1,1.863-1.863,1.866,1.866,0,0,1-1.863,1.863m0-2.236a.373.373,0,0,0-.373.373c0,.41.745.41.745,0a.373.373,0,0,0-.373-.373" transform="translate(536.623 448.526)" fill="#0c1834"/>
+                                    <path id="Path_273615" data-name="Path 273615" d="M289.8,32.7a1.123,1.123,0,0,1-1.023-.663l-3.105-6.991a1.118,1.118,0,0,1,2.044-.909l3.105,6.991a1.12,1.12,0,0,1-.565,1.477,1.149,1.149,0,0,1-.456.1m-29.26,0a1.138,1.138,0,0,1-.458-.1,1.12,1.12,0,0,1-.562-1.479L265.089,18.7a3.672,3.672,0,0,1,3.348-2.214h8.8a1.118,1.118,0,1,1,0,2.236h-8.8a1.437,1.437,0,0,0-1.306.875l-5.575,12.446a1.119,1.119,0,0,1-1.021.66" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                    <path id="Path_273616" data-name="Path 273616" d="M260.542,32.7a1.14,1.14,0,0,1-.453-.1,1.119,1.119,0,0,1-.567-1.477l3.107-6.991a1.119,1.119,0,0,1,2.045.909l-3.108,6.991a1.12,1.12,0,0,1-1.024.663m29.26,0a1.12,1.12,0,0,1-1.021-.66l-5.566-12.428a1.447,1.447,0,0,0-1.321-.893H273.1a1.118,1.118,0,0,1,0-2.236h8.8a3.678,3.678,0,0,1,3.359,2.233l5.56,12.409a1.12,1.12,0,0,1-.563,1.479,1.133,1.133,0,0,1-.458.1" transform="translate(528.618 443.186)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">Memory</div>
+                            <div class="panel-description">20%</div>
+                            <div class="panel-status relative">Normal</div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center gap" style="--gap-size:5px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15.476" height="28.283" viewBox="0 0 15.476 28.283">
+                                <g id="Group_85035" data-name="Group 85035" transform="translate(-945.408 -455)">
+                                    <path id="Path_273610" data-name="Path 273610" d="M395.752,44.056A6.757,6.757,0,0,1,389,37.312a6.476,6.476,0,0,1,2.04-4.721V20.278a4.683,4.683,0,0,1,9.358,0V32.591a6.477,6.477,0,0,1,2.04,4.721,6.724,6.724,0,0,1-6.687,6.744m0-26.6a3.179,3.179,0,0,0-3.036,2.824V32.967a.841.841,0,0,1-.3.646,4.8,4.8,0,0,0-1.737,3.7,5.038,5.038,0,0,0,10.075.153c0-.05,0-.1,0-.153a4.8,4.8,0,0,0-1.737-3.7.841.841,0,0,1-.3-.646V20.278a3.187,3.187,0,0,0-2.965-2.824Z" transform="translate(556.407 439.227)" fill="#0c1834"/>
+                                    <path id="Path_273611" data-name="Path 273611" d="M394.786,33.975a.84.84,0,0,1-.839-.84V28.992a.84.84,0,1,1,1.68,0v4.146a.84.84,0,0,1-.84.84Z" transform="translate(557.235 441.301)" fill="#0c1834"/>
+                                    <path id="Path_273612" data-name="Path 273612" d="M395.149,39.476a2.947,2.947,0,0,1-2.945-2.945,2.912,2.912,0,0,1,2.882-2.942h.063A2.848,2.848,0,0,1,398.03,36.4c0,.043,0,.086,0,.13a2.92,2.92,0,0,1-2.88,2.945m0-4.2a1.236,1.236,0,0,0-1.265,1.207v.055a1.283,1.283,0,0,0,1.265,1.262,1.22,1.22,0,0,0,1.2-1.239v-.026a1.183,1.183,0,0,0-1.1-1.261.982.982,0,0,0-.1,0Zm7.951-4.886h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-3.867h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Zm0-4.006h-4.01a.84.84,0,1,1,0-1.68H403.1a.84.84,0,0,1,0,1.68Z" transform="translate(556.943 440.074)" fill="#0c1834"/>
+                                </g>
+                            </svg>
+                            <div class="panel-name">CPU Temp</div>
+                            <div class="panel-description">70<sup style="font-size: 8px;">o</sup></div>
+                            <div class="panel-status relative">Height</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Box -->
+                <div class="vpark-fleet-right-box d-flex flex-column gap w-50 bg-transparent">
+                    <!-- Active Vehicles Vs. In-Active Vehicles -->
+                    <div class="vehicles d-flex bg-white br-20 py-20 px-40">
+                        <div class="vehicles-left-box d-flex flex-column justify-space-between h-100">
+                            <div class="vehicles-text">Active Vehicles Vs. In-Active Vehicles</div>
+                            <div class="vehicles-status">
+                                <div class="d-flex gap mb-10">
+                                    <span class="vehicles-status-active"></span>
+                                    <div class="vehicles-text-in-ac">Active Vehicles</div>
+                                </div>
+                                <div class="d-flex gap">
+                                    <span class="vehicles-status-in-active"></span>
+                                    <div class="vehicles-text-in-ac">In-Active Vehicles</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vehicles-right-box">
+                            <div class="vehicles-img-box h-100 relative">
+                                <img class="vehicles-img-1" src="./images/Path 276776.png" alt="image">
+                                <img class="vehicles-img-2" src="./images/Path 276777.png" alt="image">
+                                <svg width="400" height="600">
+                                <g>
+                                    <path d="M 50 50 L 110 110 H 200" stroke="#1072C7" stroke-width="2" fill="none"/>
+                                    <circle cx="50" cy="50" r="5" fill="#1072C7"/>
+                                    <circle cx="200" cy="110" r="5" fill="#1072C7"/>
+                                    <foreignObject x="230" y="90" width="400" height="70">
+                                    <div class="chart-num" style="color:#6D7485;font-size: 27px;" xmlns="http://www.w3.org/1999/xhtml">40%</div>
+                                    <div class="chart-in-ac" style="color:#6D7485;font-size: 14px;" xmlns="http://www.w3.org/1999/xhtml">In-Active Vehicles</div>
+                                    </foreignObject>
+                                </g>
+                                </svg>
+                                
+                                <svg width="300" height="200">
+                                    <line x1="50" y1="150" x2="90" y2="110" stroke="#1072C7" stroke-width="2" />
+                                    <line x1="90" y1="110" x2="140" y2="110" stroke="#1072C7" stroke-width="2" />
+                                    <circle cx="50" cy="150" r="5" fill="#1072C7" />
+                                    <circle cx="140" cy="110" r="5" fill="#1072C7" />
+                                    <foreignObject x="165" y="90" width="180" height="100">
+                                        <div class="chart-num" style="color:#6D7485;font-size: 27px;" xmlns="http://www.w3.org/1999/xhtml">60%</div>
+                                        <div class="chart-in-ac" style="color:#6D7485;font-size: 14px;" xmlns="http://www.w3.org/1999/xhtml">Active Vehicles</div>
+                                    </foreignObject>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boxes -->
+                    <div class="d-flex flex-wrap">
+                        <div class="boxes pa-20 w-48 bg-white br-20 d-flex flex-column align-items-center justify-content-center gap"style="--gap-size:5px">
+                            <div>
+                                <img src="./images/BG-1.png">
+                            </div>
+                            <div class="total-nums">2,108</div>
+                            <div class="total-text fs-20">Total Violations</div>
+                        </div>
+                        <div class="boxes pa-20 w-48 bg-white br-20 d-flex flex-column align-items-center justify-content-center ml-15 mb-15 gap"style="--gap-size:5px">
+                            <div>
+                                <img src="./images/BG-2.png">
+                            </div>
+                            <div class="total-nums">100,000</div>
+                            <div class="total-text fs-20">Total Dectations</div>
+                        </div>
+                        <div class="boxes pa-20 w-48 bg-white br-20 d-flex flex-column align-items-center justify-content-center gap"style="--gap-size:5px">
+                            <div>
+                                <img src="./images/BG-3.png">
+                            </div>
+                            <div class="total-nums">48</div>
+                            <div class="total-text fs-20">Total Active Vehicles</div>
+                        </div>
+                        <div class="boxes pa-20 w-48 bg-white br-20 d-flex flex-column align-items-center justify-content-center ml-15 gap"style="--gap-size:5px">
+                            <div>
+                                <img src="./images/BG-4.png">
+                            </div>
+                            <div class="total-nums">50,000</div>
+                            <div class="total-text fs-20">Total Distance in KM</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- advertisement -->
+            <section class="advertisement br-20 relative mt-80">
+                <div class="mb-5">Get a bird’s eye <span style="color:#f9b419">view</span> in a snap.</div>
+                <p class="fs-20">We equip you with the tools to customise your dashboards and track fleet status, decorations, and violations at a glance.</p>
+                <img src="./images/Mask Group 49.png">
+            </section>
+            <!-- Google Map -->
+            <section class="map br-20 pa-30 my-40">
+                <div class="mb-20">Trip Route</div>
+                <iframe class="br-20 w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433868.6382507876!2d35.61796266144592!3d31.83591881636243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b5fb85d7981af%3A0x631c30c0f8dc65e8!2sAmman!5e0!3m2!1sen!2sjo!4v1683373209613!5m2!1sen!2sjo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
